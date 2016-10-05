@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/mwesopic"
+        android:background="#ffffff"
+        />
+
+    <ImageButton
+        android:src="@drawable/x7"
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ImageButton01"
+        android:background="@drawable/roundcorner"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="0dp"/>
+
+    <ImageButton
+        android:src="@drawable/x7"
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundcorner"
+        android:id="@+id/ImageButton02"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:src="@drawable/x7"
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundcorner"
+        android:id="@+id/ImageButton03"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp"
+        />
+
+    <ImageButton
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundcorner"
+        android:id="@+id/ImageButton04"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        />
+
+    <ImageButton
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundcorner"
+        android:id="@+id/ImageButton05"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundcorner"
+        android:id="@+id/ImageButton06"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp"
+        android:layout_centerVertical="true"
+        />
+
+    <ImageButton
+        android:src="@drawable/o7"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        android:background="@drawable/roundcorner"
+        android:id="@+id/ImageButton07"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="27dp"
+        />
+
+    <ImageButton
+        android:src="@drawable/o7"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundcorner"
+        android:id="@+id/ImageButton08"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        />
+
+    <ImageButton
+        android:src="@drawable/o7"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundcorner"
+        android:id="@+id/ImageButton09"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="27dp"
+        android:minHeight="52dp"
+        android:minWidth="52dp"
+        android:maxHeight="52dp"
+        android:maxWidth="52dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/TextView01"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        />
+
+</RelativeLayout>
