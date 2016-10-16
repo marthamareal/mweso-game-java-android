@@ -1,10 +1,9 @@
 package mareal.mweso;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
+//this handles the welcome screen that splashes the first time the app is started
 public class Splashscreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,7 +12,8 @@ public class Splashscreen extends Activity {
         Thread timerThread = new Thread(){
             public void run(){
             try{
-   sleep(3000);
+      //basing on the majority of the apps i have reduced the sleep time to 2 seconds
+   sleep(2000);
 }
             catch(InterruptedException e){
                 e.printStackTrace();
