@@ -1,5 +1,6 @@
 package com.example.fred.mwesogame;
 
+import android.media.MediaPlayer;//wabuluka davies
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -351,7 +352,11 @@ public class Game extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamelayout);
-
+	
+	//to instatate the media element when the game is started.wabuluka Davies
+		MediaPlayer mdPlayer = MediaPlayer.create(this, R.raw.splash);
+		mdPlayer.start();
+		
         setupGame( );
 
         status = (TextView) findViewById(R.id.TextView01);
