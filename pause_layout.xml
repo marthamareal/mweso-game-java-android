@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<ScrollView
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/menufrm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:minHeight="300dp">
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                >
+                <TextView android:textSize="16.0sp"
+                    android:textColor="#ffffffff"
+                    android:gravity="center|top"
+                    android:id="@+id/restart"
+                    android:background="@drawable/menuitem"
+                    android:padding="8.0dip"
+                    android:clickable="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Restart"
+                    android:drawableTop="@drawable/restart"
+                    android:layout_weight="1.0" />
+                <TextView
+                    android:textSize="16.0sp"
+                    android:textColor="#ffffffff"
+                    android:gravity="center|top"
+                    android:id="@+id/resume"
+                    android:background="@drawable/menuitem"
+                    android:padding="8.0dip"
+                    android:clickable="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Resume"
+                    android:drawableTop="@drawable/resume"
+                    android:layout_weight="1.0" />
+        </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                >
+            <TextView
+                    android:textSize="16.0sp"
+                    android:textColor="#ffffffff"
+                    android:gravity="center|top"
+                    android:id="@+id/cash"
+                    android:background="@drawable/menuitem"
+                    android:padding="8.0dip"
+                    android:clickable="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="View Stats"
+                    android:drawableTop="@drawable/cash"
+                    android:layout_weight="1.0" />
+                <TextView android:textSize="16.0sp"
+                    android:textColor="#ffffffff"
+                    android:gravity="center|top"
+                    android:id="@+id/settings"
+                    android:background="@drawable/menuitem"
+                    android:padding="8.0dip"
+                    android:clickable="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Settings"
+                    android:drawableTop="@drawable/settings"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                >
+                <TextView android:textSize="16.0sp"
+                    android:textColor="#ffffffff"
+                    android:gravity="center|top"
+                    android:id="@+id/help"
+                    android:background="@drawable/menuitem"
+                    android:padding="8.0dip"
+                    android:clickable="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Help"
+                    android:onClick="help"
+                    android:drawableTop="@drawable/help"
+                    android:layout_weight="1.0" />
+                <TextView android:textSize="16.0sp"
+                    android:textColor="#ffffffff"
+                    android:gravity="center|top"
+                    android:id="@+id/info"
+                    android:background="@drawable/menuitem"
+                    android:padding="8.0dip"
+                    android:clickable="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="About"
+                    android:drawableTop="@drawable/info"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</FrameLayout>
