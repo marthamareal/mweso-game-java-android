@@ -22,6 +22,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Game extends AppCompatActivity {
 	MediaPlayer player;
 	int k;
@@ -241,72 +245,357 @@ public class Game extends AppCompatActivity {
 			buttons[index].button.setImageResource(R.drawable.obutton);
 	}
 
+	Game the_games;
+	int cell_num;
 
+	public void Computer() {
+// lower row
+		if (cells[6] == Cell.O) {
+			if (cells[4] == Cell.E) {
 
+				buttons[6].button.setImageResource(android.R.color.transparent);
+				buttons[4].button.performClick();
+				cells[4] = Cell.O;
+				cells[6] = Cell.E;
+				status.setText("X's Turn");
 
-
-	public void Computer(){
-
-		if(cells[8]==Cell.O || cells[5]==Cell.E || cells[4]==Cell.E || cells[7]==Cell.E) {
-			int rankings[] = new int[9];
-
-		/* get the rankings */
-			for (int i = 0; i < 9; i++) {
-				if (cells[i] == Cell.E) {
-					rankings[i] = rankMove(i);
-				}
 			}
 
-		/* choose best ranking */
-			int best_ranking = 0;
-			for (int i = 0; i < 9; i++) {
-				if (rankings[i] > rankings[best_ranking])
-					best_ranking = i;
+			if (cells[3] == Cell.E) {
+
+				buttons[6].button.setImageResource(android.R.color.transparent);
+				buttons[3].button.performClick();
+				cells[3] = Cell.O;
+				cells[6] = Cell.E;
+				status.setText("X's Turn");
+
 			}
 
+			if (cells[7] == Cell.E) {
 
-			buttons[best_ranking].button.performClick();
+				buttons[6].button.setImageResource(android.R.color.transparent);
+				buttons[7].button.performClick();
+				cells[7] = Cell.O;
+				cells[6] = Cell.E;
+				status.setText("X's Turn");
 
+			}
 		}
-		/* if(cells[0]==Cell.O || cells[1]==Cell.E || cells[4]==Cell.E ||cells[3]==Cell.E)
-			go with the best ranking
-		for (int i=0;i<9;i++)
-			buttons[i].button.performClick( );
 
-		if(cells[1]==Cell.O || cells[0]==Cell.E || cells[4]==Cell.E || cells[2]==Cell.E)
-			for (int i=0;i<9;i++)
-				buttons[i].button.performClick( );
+		else if (cells[7] == Cell.O) {
+			if (cells[4] == Cell.E) {
 
-		if(cells[2]==Cell.O || cells[1]==Cell.E || cells[4]==Cell.E || cells[5]==Cell.E)
-			for (int i=0;i<9;i++)
-				buttons[i].button.performClick( );
+				buttons[7].button.setImageResource(android.R.color.transparent);
+				buttons[4].button.performClick();
+				cells[4] = Cell.O;
+				cells[7] = Cell.E;
+				status.setText("X's Turn");
 
-		if(cells[3]==Cell.O || cells[0]==Cell.E && cells[4]==Cell.E && cells[6]==Cell.E)
-			for (int i=0;i<9;i++)
-				buttons[i].button.performClick( );
+			}
 
-		if(cells[5]==Cell.O || cells[2]==Cell.E || cells[4]==Cell.E || cells[8]==Cell.E)
-			for (int i=0;i<9;i++)
-				buttons[i].button.performClick( );
+			if (cells[6] == Cell.E) {
 
-		if(cells[6]==Cell.O || cells[3]==Cell.E || cells[4]==Cell.E || cells[7]==Cell.E)
-			for (int i=0;i<9;i++)
-				buttons[i].button.performClick( );
+				buttons[7].button.setImageResource(android.R.color.transparent);
+				buttons[6].button.performClick();
+				cells[6] = Cell.O;
+				cells[7] = Cell.E;
+				status.setText("X's Turn");
 
-		if(cells[7]==Cell.O || cells[6]==Cell.E || cells[4]==Cell.E || cells[8]==Cell.E)
-			for (int i=0;i<9;i++)
-				buttons[i].button.performClick( );
+			}
 
-		if(cells[8]==Cell.O || cells[5]==Cell.E || cells[4]==Cell.E || cells[7]==Cell.E)
-			for (int i=0;i<9;i++)
-				buttons[i].button.performClick( );
+			if (cells[8] == Cell.E) {
 
-		if(cells[4]==Cell.O && cells[1]==Cell.E && cells[2]==Cell.E && cells[0]==Cell.E && cells[3]==Cell.E
-				&& cells[5]==Cell.E && cells[6]==Cell.E && cells[7]==Cell.E && cells[8]==Cell.E)
-			setImage(1);*/
+				buttons[7].button.setImageResource(android.R.color.transparent);
+				buttons[8].button.performClick();
+				cells[8] = Cell.O;
+				cells[7] = Cell.E;
+				status.setText("X's Turn");
 
+			}
+		}
 
+		else if (cells[8] == Cell.O) {
+			if (cells[4] == Cell.E) {
+
+				buttons[8].button.setImageResource(android.R.color.transparent);
+				buttons[4].button.performClick();
+				cells[4] = Cell.O;
+				cells[8] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[7] == Cell.E) {
+
+				buttons[8].button.setImageResource(android.R.color.transparent);
+				buttons[7].button.performClick();
+				cells[7] = Cell.O;
+				cells[8] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[5] == Cell.E) {
+
+				buttons[8].button.setImageResource(android.R.color.transparent);
+				buttons[5].button.performClick();
+				cells[5] = Cell.O;
+				cells[8] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+		}
+		/*//upper row
+		else if (cells[0] == Cell.O) {
+			if (cells[4] == Cell.E) {
+
+				buttons[0].button.setImageResource(android.R.color.transparent);
+				buttons[4].button.performClick();
+				cells[4] = Cell.O;
+				cells[0] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[2] == Cell.E) {
+
+				buttons[0].button.setImageResource(android.R.color.transparent);
+				buttons[2].button.performClick();
+				cells[2] = Cell.O;
+				cells[0] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[3] == Cell.E) {
+
+				buttons[0].button.setImageResource(android.R.color.transparent);
+				buttons[3].button.performClick();
+				cells[3] = Cell.O;
+				cells[0] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+		}
+
+		else if (cells[1] == Cell.O) {
+			if (cells[4] == Cell.E) {
+
+				buttons[1].button.setImageResource(android.R.color.transparent);
+				buttons[4].button.performClick();
+				cells[4] = Cell.O;
+				cells[1] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[0] == Cell.E) {
+
+				buttons[1].button.setImageResource(android.R.color.transparent);
+				buttons[0].button.performClick();
+				cells[0] = Cell.O;
+				cells[1] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[3] == Cell.E) {
+
+				buttons[1].button.setImageResource(android.R.color.transparent);
+				buttons[3].button.performClick();
+				cells[3] = Cell.O;
+				cells[1] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+		}
+
+		else if (cells[2] == Cell.O) {
+			if (cells[4] == Cell.E) {
+
+				buttons[2].button.setImageResource(android.R.color.transparent);
+				buttons[4].button.performClick();
+				cells[4] = Cell.O;
+				cells[2] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[1] == Cell.E) {
+
+				buttons[2].button.setImageResource(android.R.color.transparent);
+				buttons[1].button.performClick();
+				cells[1] = Cell.O;
+				cells[2] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[5] == Cell.E) {
+
+				buttons[2].button.setImageResource(android.R.color.transparent);
+				buttons[5].button.performClick();
+				cells[5] = Cell.O;
+				cells[2] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+		}
+		// middel  row
+		else if (cells[3] == Cell.O) {
+			if (cells[4] == Cell.E) {
+
+				buttons[3].button.setImageResource(android.R.color.transparent);
+				buttons[4].button.performClick();
+				cells[4] = Cell.O;
+				cells[3] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[0] == Cell.E) {
+
+				buttons[3].button.setImageResource(android.R.color.transparent);
+				buttons[0].button.performClick();
+				cells[0] = Cell.O;
+				cells[3] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[6] == Cell.E) {
+
+				buttons[3].button.setImageResource(android.R.color.transparent);
+				buttons[6].button.performClick();
+				cells[6] = Cell.O;
+				cells[3] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+		}
+
+		else if (cells[5] == Cell.O) {
+			if (cells[4] == Cell.E) {
+
+				buttons[5].button.setImageResource(android.R.color.transparent);
+				buttons[4].button.performClick();
+				cells[4] = Cell.O;
+				cells[5] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[2] == Cell.E) {
+
+				buttons[5].button.setImageResource(android.R.color.transparent);
+				buttons[2].button.performClick();
+				cells[2] = Cell.O;
+				cells[5] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[8] == Cell.E) {
+
+				buttons[5].button.setImageResource(android.R.color.transparent);
+				buttons[8].button.performClick();
+				cells[8] = Cell.O;
+				cells[5] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+		}
+
+		else if (cells[4] == Cell.O) {
+			if (cells[0] == Cell.E) {
+
+				buttons[4].button.setImageResource(android.R.color.transparent);
+				buttons[0].button.performClick();
+				cells[0] = Cell.O;
+				cells[4] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[1] == Cell.E) {
+
+				buttons[4].button.setImageResource(android.R.color.transparent);
+				buttons[1].button.performClick();
+				cells[1] = Cell.O;
+				cells[4] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[2] == Cell.E) {
+
+				buttons[4].button.setImageResource(android.R.color.transparent);
+				buttons[2].button.performClick();
+				cells[2] = Cell.O;
+				cells[4] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+			if (cells[3] == Cell.E) {
+
+				buttons[4].button.setImageResource(android.R.color.transparent);
+				buttons[3].button.performClick();
+				cells[3] = Cell.O;
+				cells[4] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[5] == Cell.E) {
+
+				buttons[4].button.setImageResource(android.R.color.transparent);
+				buttons[5].button.performClick();
+				cells[5] = Cell.O;
+				cells[4] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[6] == Cell.E) {
+
+				buttons[4].button.setImageResource(android.R.color.transparent);
+				buttons[6].button.performClick();
+				cells[6] = Cell.O;
+				cells[4] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+			if (cells[7] == Cell.E) {
+
+				buttons[4].button.setImageResource(android.R.color.transparent);
+				buttons[7].button.performClick();
+				cells[7] = Cell.O;
+				cells[4] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+
+			if (cells[8] == Cell.E) {
+
+				buttons[4].button.setImageResource(android.R.color.transparent);
+				buttons[8].button.performClick();
+				cells[8] = Cell.O;
+				cells[4] = Cell.E;
+				status.setText("X's Turn");
+
+			}
+		}
+*/
 	}
+
+
+		/*
+
+
+
+
+
+
 
 /*	public void doAi( ) {
 		int rankings [] = new int[9];
@@ -329,6 +618,9 @@ public class Game extends AppCompatActivity {
 	} */
 
 	/* called when a button is clicked */
+
+
+
 	//cell = integer for cell number i.e ( 0 to 8 )
 	//turn = integer for identifying player's turn
 	public void update(int cell, int turn) {
@@ -336,40 +628,69 @@ public class Game extends AppCompatActivity {
 		cells[cell] = ((turn % 2) == 0) ? Cell.X : Cell.O;
 		/* check for a winner */
 		Outcome o;
-			switch(o = checkGame( )) {
-				case P1_WON:
-					if(turn>=6) {
-						status.setText("Player 1 Won!!");
-						finishGame(o, 1, "", "");
-					}else{
-						status.setText(((turn % 2) == 0) ? "O's Turn" : "X's Turn");
-					}
-					break;
-				case P2_WON:
-					if(turn>=6) {
-						status.setText("Player 2 Won!!");
-						finishGame(o, 1, "", "");
-					}else{
-						status.setText(((turn % 2) == 0) ? "O's Turn" : "X's Turn");
-					}
-					break;
-				case COMPUTER_WON:
-					if(turn>=6) {
-						status.setText("You Have Lost!!");
-						finishGame(o, 1, "", "");
-					}else{
-						status.setText(((turn % 2) == 0) ? "O's Turn" : "X's Turn");
-					}
-					break;
-				case NONE:
+		switch (o = checkGame()) {
+			case P1_WON:
+				if (turn >= 6) {
+					status.setText("Player 1 Won!!");
+					finishGame(o, 1, "", "");
+				} else {
 					status.setText(((turn % 2) == 0) ? "O's Turn" : "X's Turn");
-					break;
-			}
+				}
+				break;
+			case P2_WON:
+				if (turn >= 6) {
+					status.setText("Player 2 Won!!");
+					finishGame(o, 1, "", "");
+				} else {
+					status.setText(((turn % 2) == 0) ? "O's Turn" : "X's Turn");
+				}
+				break;
+			case COMPUTER_WON:
+				if (turn >= 6) {
+					status.setText("You Have Lost!!");
+					finishGame(o, 1, "", "");
+				} else {
+					status.setText(((turn % 2) == 0) ? "O's Turn" : "X's Turn");
+				}
+				break;
+			case NONE:
+				status.setText(((turn % 2) == 0) ? "O's Turn" : "X's Turn");
+				break;
+		}
 		// time to do computer move if needed
-		if((num_players == 1) && status.getText().toString().equalsIgnoreCase("O's Turn")){
-			Computer();
+		//if((num_players == 1) && status.getText().toString().equalsIgnoreCase("O's Turn")){
+		//	Computer();
+		//}
+
+		// check random method
+
+
+		if ((num_players == 1) && status.getText().toString().equalsIgnoreCase("O's Turn")) {
+			try {
+				TestAi();
+			} catch (Exception e) {
+			}
 		}
 	}
+		MwesoEasyAi mwesoAi = new MwesoEasyAi();
+// int tries=0;
+
+	public void TestAi() {
+		int current = mwesoAi.PickRandomlyFromComputerPieces();
+		buttons[current].button.performClick();
+		cells[current] = Cell.E;
+		int current2 = mwesoAi.pickRandomlyFromAllowedEmptyMoves(current);
+		buttons[current2].button.performClick();
+		cells[current2] = Cell.O;
+		setImage(current2);
+	}
+
+
+
+
+
+
+
 
 	/* our buttons */
 	private AnimatedButton buttons [] = new AnimatedButton [9];
@@ -522,7 +843,124 @@ public class Game extends AppCompatActivity {
 
 	int global_turn = 0,turn,dont;boolean save;
 
-	class AnimatedButton {
+ class MwesoEasyAi {
+
+			public int PickRandomlyFromComputerPieces(){
+				Random rand = new Random();
+				int index = currentComputerPieces().get(rand.nextInt(currentComputerPieces().size()));
+				return index;
+			}
+
+			public List<Integer> currentComputerPieces(){
+				List<Integer> myPieces = new ArrayList<Integer>(); // allocate List
+				List<Integer> compPieces = new ArrayList<Integer>();
+				for(int i=0;i<9;i++){
+					if(cells[i]==Cell.O){
+						for(int x=0;x<setPreferredMoves(i).length;x++){
+							if(checkEmptyMoves().contains(setPreferredMoves(i)[x])){
+								if(myPieces.size()<3){
+									if(!myPieces.contains(setPreferredMoves(i)[x])){
+										if(!compPieces.contains(i)){
+											compPieces.add(i);
+										}
+										myPieces.add(setPreferredMoves(i)[x]);
+									}
+								}
+							}
+						}
+					}
+				}
+				return compPieces;
+			}
+
+			public int pickRandomlyFromAllowedEmptyMoves(int m){
+				Random rand = new Random();
+				//if i remove this cell will i win
+				int index = checkAllowedEmptyMoves(m).get(rand.nextInt(checkAllowedEmptyMoves(m).size()));
+				return index;
+			}
+
+			public List<Integer> checkAllowedEmptyMoves(int m){
+				List<Integer> nextMoves = new ArrayList<Integer>(); // allocate List
+				for(int i=0;i<setPreferredMoves(m).length;i++){
+					if(checkEmptyMoves().contains(setPreferredMoves(m)[i])){
+						nextMoves.add(setPreferredMoves(m)[i]);
+					}
+				}
+				return nextMoves;
+			}
+			//
+			public List<Integer> checkEmptyMoves() {
+				List<Integer> nextMoves = new ArrayList<Integer>(); // allocate List
+				// Search for empty cells and add to the List
+				for (int i = 0; i < 9; ++i) {
+					if(cells[i]==Cell.E){
+						nextMoves.add(i);
+					}
+				}
+				return nextMoves;
+			}
+
+			public int[] setPreferredMoves(int index){
+				int[] preferredMove = new int[8];
+				int[] preferredMove2 = new int[3];
+				if(index==0){
+					/*if((cells[1]==Cell.O && cells[7]==Cell.O)||(cells[2]==Cell.O && cells[6]==Cell.O)
+							||(cells[3]==Cell.O && cells[5]==Cell.O))
+					preferredMove2[1]=4;
+					else*/
+						preferredMove2[0] = 1;preferredMove2[1]=3;preferredMove2[2]=4;
+				}else if(index==1){
+					/*if((cells[2]==Cell.O && cells[6]==Cell.O)||(cells[0]==Cell.O && cells[8]==Cell.O)
+							||(cells[3]==Cell.O && cells[5]==Cell.O))
+						preferredMove2[2]=4;*/
+					preferredMove2[0] = 0;preferredMove2[1]=2;preferredMove2[2]=4;
+				}else if(index==2){
+					/*if((cells[1]==Cell.O && cells[7]==Cell.O)||(cells[0]==Cell.O && cells[8]==Cell.O)
+							||(cells[3]==Cell.O && cells[5]==Cell.O))
+						preferredMove2[2]=4;
+					else*/
+					preferredMove2[0] = 1;preferredMove2[1]=5;preferredMove2[2]=4;
+				}else if(index==3){
+					/*if((cells[1]==Cell.O && cells[7]==Cell.O)||(cells[0]==Cell.O && cells[8]==Cell.O)
+							||(cells[2]==Cell.O && cells[6]==Cell.O))
+						preferredMove2[1]=4;
+					else*/
+					preferredMove2[0] = 0;preferredMove2[1]=6;preferredMove2[2]=4;
+				}else if(index==4){
+					preferredMove[0]=0;preferredMove[1]=1;preferredMove[2]=2;preferredMove[3]=3;preferredMove[4]=5;preferredMove[5]=6;preferredMove[6]=7;preferredMove[7]=8;
+				}else if(index==5){
+					/*if((cells[1]==Cell.O && cells[7]==Cell.O)||(cells[0]==Cell.O && cells[8]==Cell.O)
+							||(cells[2]==Cell.O && cells[6]==Cell.O))
+						preferredMove2[1]=4;
+					else*/
+					preferredMove2[0]=2;preferredMove2[1]=8;preferredMove2[2]=4;
+				}else if(index==6){
+					/*if((cells[1]==Cell.O && cells[7]==Cell.O)||(cells[0]==Cell.O && cells[8]==Cell.O)
+							||(cells[3]==Cell.O && cells[5]==Cell.O))
+						preferredMove2[1]=4;
+					else*/
+					preferredMove2[0]=3;preferredMove2[1]=7;preferredMove2[2]=4;
+				}else if(index==7){
+					/*if((cells[2]==Cell.O && cells[6]==Cell.O)||(cells[0]==Cell.O && cells[8]==Cell.O)
+							||(cells[3]==Cell.O && cells[5]==Cell.O))
+						preferredMove2[1]=4;
+					else*/
+					preferredMove2[0]=6;preferredMove2[1]=8;preferredMove2[2]=4;
+				}else if(index==8){
+					/*if((cells[1]==Cell.O && cells[7]==Cell.O)||(cells[2]==Cell.O && cells[6]==Cell.O)
+							||(cells[3]==Cell.O && cells[5]==Cell.O))
+						preferredMove2[1]=4;
+					else*/
+					preferredMove2[0]=5;preferredMove2[1]=7;preferredMove2[2]=4;
+				}
+				return (index==4)?preferredMove:preferredMove2;
+			}
+
+
+	}
+
+class AnimatedButton {
 
 		public ImageButton button;		/* which button we control */
 		Game the_game;			/* refernce to the game object */
@@ -551,6 +989,7 @@ public class Game extends AppCompatActivity {
 			}
 		}
 
+
 		public void setAfter(){
 			if(dont==1){
 				turn = global_turn;//turn is equal to zero which is the even number that corresponds to X
@@ -560,6 +999,9 @@ public class Game extends AppCompatActivity {
 				if((turn % 2) == 0) cells[cell_number] = Cell.X; else cells[cell_number] = Cell.O;
 				the_game.update(cell_number, turn);
 			}
+		}
+		public void AI(){
+
 		}
 
 		public void gameRules(int index){
