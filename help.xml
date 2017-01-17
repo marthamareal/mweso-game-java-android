@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    >
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOW TO PLAY"
+                android:textSize="16dp"
+                android:layout_marginLeft="100dp"
+                android:textColor="#f73e7b"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="100dp"
+                style="?android:listSeparatorTextViewStyle"
+                android:background="#e54f4f"
+                />
+        </LinearLayout>
+
+
+
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How to move tiles"
+        android:textSize="20dp"
+        android:textColor="#354ed8"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Touch on the tile you want to move, then after it disappears, touch on the free place you want to put it then it will appear.NOTE: if you remove the tile you can't place it back to that same position."
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="?android:listSeparatorTextViewStyle"
+        android:background="#e54f4f"
+        />
+
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How to Restart The Game"
+        android:textColor="#354ed8"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press the pause button at the top of the game, and from there press the Restart icon."
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="?android:listSeparatorTextViewStyle"
+        android:background="#e54f4f"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Checking Scores "
+        android:textColor="#354ed8"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Press the VIEW STATS button on the option menu or view stats icon in the pause dialog."
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="?android:listSeparatorTextViewStyle"
+        android:background="#e54f4f"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How to Set Level"
+        android:textColor="#354ed8"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press LEVELS button at the options menu or the settings icon in the pause dialog and then choose the level you want."
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="?android:listSeparatorTextViewStyle"
+        android:background="#e54f4f"/>
+
+
+</LinearLayout>
