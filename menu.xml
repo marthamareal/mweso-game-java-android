@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:title="Player 1"
+        android:icon="@drawable/xbutton"
+        android:id="@+id/pOne"
+        app:showAsAction="always" />
+    <item
+        android:title="Player 2"
+        android:icon="@drawable/obutton"
+        android:id="@+id/pTwo"
+        app:showAsAction="always" />
+    <item
+        android:title="Pause"
+        android:icon="@drawable/pause"
+        android:id="@+id/pause"
+        app:showAsAction="always" />
+</menu>
